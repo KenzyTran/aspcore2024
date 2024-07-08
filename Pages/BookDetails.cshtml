@@ -1,0 +1,79 @@
+﻿@page
+@model Bestshop.Pages.BookDetailsModel
+@{
+}
+
+<h2 class="rounded text-center text-white p-2" style="background-color: #08618d;">Chi tiết sách</h2>
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="my-2 text-center sticky-top" style="top:10px;">
+			<image src="/images/books/@Model.bookInfo.ImageFileName" class="img-fluid rounded" alt="..." />
+			<button type="button" class="btn btn-warning btn-sm my-2" onclick="addToCart(this, @Model.bookInfo.Id)">
+				Thêm vào giỏ <i class="bi bi-cart4"></i>
+			</button>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="row mb-3">
+			<div class="col-md-4">
+				<h4>Tiêu đề</h4>
+			</div>
+			<div class="col-md-8">
+				<h4>@Model.bookInfo.Title</h4>
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-md-4">
+				<strong>Tác giả</strong>
+			</div>
+			<div class="col-md-8">
+				@Model.bookInfo.Authors
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-md-4">
+				<strong>ISNB</strong>
+			</div>
+			<div class="col-md-8">
+				@Model.bookInfo.Isbn
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-md-4">
+				<strong>Số trang</strong>
+			</div>
+			<div class="col-md-8">
+				@Model.bookInfo.NumPages
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-md-4">
+				<strong>Giá</strong>
+			</div>
+			<div class="col-md-8">
+				@Model.bookInfo.Price
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-md-4">
+				<strong>Thể loại</strong>
+			</div>
+			<div class="col-md-8">
+				@Model.bookInfo.Category
+			</div>
+		</div>
+
+		<p>
+			<strong>Mô tả:</strong>
+			<br />
+			@Model.bookInfo.Description
+		</p>
+
+	</div>
+</div>

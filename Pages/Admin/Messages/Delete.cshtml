@@ -1,0 +1,29 @@
+﻿@page
+@using System.Data.SqlClient
+@using Bestshop.MyHelpers
+@attribute [RequireAuth(RequiredRole = "admin")]
+@{
+    string id = Request.Query["id"];
+    try
+    {
+        string connectionString = "Data Source=.\\sqlexpress;Initial Catalog=bestshop;Integrated Security=True";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "DELETE FROM messages WHERE id=@id";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch(Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+
+    Response.Redirect("/Admin/Messages/Index");
+}

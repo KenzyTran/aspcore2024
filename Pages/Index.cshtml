@@ -1,0 +1,102 @@
+﻿    @page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    ViewData["NoContainer"] = true;
+}
+
+<style>
+    .book-item img {
+        width: 100%;
+        height: 260px;
+        object-fit: contain;
+        background: radial-gradient(white 50%, lightblue 100%)
+    }
+
+    .book-item {
+        transition: all 0.3s ease;
+    }
+
+    .book-item:hover {
+            transform: scale(1.05);
+    }
+</style>
+
+<!-- Phần giới thiệu -->
+<div class="py-5" style="background-color: #08618d;">
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-md-6 pb-3">
+                <h1 class="display-2"><strong>Sách nổi bật</strong></h1>
+                <br />
+                <p>
+                    Chúng tôi có những cuốn sách hay nhất trên thế giới. Bạn sẽ thích đọc chúng.
+                    Chúng tôi có nhiều lựa chọn sách từ các thể loại khác nhau.
+                    Bạn chắc chắn sẽ tìm thấy điều khiến bạn vui vẻ.
+                </p>
+                <br />
+                <form class="d-flex" action="/Books">
+                    <input class="form-control me-2" name="search" placeholder="Tìm kiếm theo tên sách hoặc tên tác giả">
+                    <button class="btn btn-outline-light" type="submit">Tìm kiếm</button>
+                </form>
+
+
+            </div>
+            <div class="col-md-6">
+                <img src="/images/books.png" class="img-fluid rounded" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sách mới nhất -->
+<div class="py-5">
+    <div class="container">
+        <h1 class="pb-5 text-center display-5"><strong>Sách mới nhất</strong></h1>
+        <div class="row">
+           @foreach(var item in Model.listNewestBooks)
+           {
+                <div class="col-lg-3 col-sm-6 my-2">
+                    <div class="card shadow text-center h-100 book-item">
+                        <img src="/images/books/@item.ImageFileName" class="card-img-top p-3" alt="..." />
+                        <div class="card-body">
+                            <h4>@item.Title</h4>
+                            <p>Tác giả: @item.Authors, Thể loại: @item.Category, Số trang: @item.NumPages</p>
+                            <h4>@(item.Price)$</h4>
+                            <a class="btn btn-primary btn-sm my-2" href="/BookDetails?id=@(item.Id)" role="button">Chi tiết</a>
+                            <button type="button" class="btn btn-warning btn-sm my-2" onclick="addToCart(this, @item.Id)">
+                                Thêm vào giỏ <i class="bi bi-cart4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+           }
+        </div>
+    </div>
+</div>
+
+<!-- Top sách bán chạy -->
+<div class="py-5" style="background-color: #e9ecf0;">
+    <div class="container">
+        <h1 class="pb-5 text-center display-5"><strong>Sách bán chạy</strong></h1>
+        <div class="row">
+            @foreach (var item in Model.listTopSales)
+            {
+                <div class="col-lg-3 col-sm-6 my-2">
+                    <div class="card shadow text-center h-100 book-item">
+                        <img src="/images/books/@item.ImageFileName" class="card-img-top p-3" alt="..." />
+                        <div class="card-body">
+                            <h4>@item.Title</h4>
+                            <p>Tác giả: @item.Authors, Thể loại: @item.Category, Số trang: @item.NumPages</p>
+                            <h4>@(item.Price)$</h4>
+                            <a class="btn btn-primary btn-sm my-2" href="/BookDetails?id=@(item.Id)" role="button">Chi tiết</a>
+                            <button type="button" class="btn btn-warning btn-sm my-2" onclick="addToCart(this, @item.Id)">
+                                Thêm vào giỏ <i class="bi bi-cart4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
