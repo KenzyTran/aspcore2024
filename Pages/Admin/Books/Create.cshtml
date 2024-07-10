@@ -2,7 +2,7 @@
 @model Bestshop.Pages.Admin.Books.CreateModel
 @{
 }
-<h2 class="my-3">New Book</h2>
+<h2 class="my-3">Thêm sách mới</h2>
 
 @if (Model.errorMessage.Length > 0)
 {
@@ -21,7 +21,7 @@ else if (Model.successMessage.Length > 0)
 
 <form method="POST" enctype="multipart/form-data">
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Title</label>
+		<label class="col-sm-3 col-form-label">Tên sách</label>
 		<div class="col-sm-6">
 			<input class="form-control" asp-for="Title"/>
 			<span asp-validation-for="Title" class="text-danger"></span>
@@ -29,7 +29,7 @@ else if (Model.successMessage.Length > 0)
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Authors</label>
+		<label class="col-sm-3 col-form-label">Tác giả</label>
 		<div class="col-sm-6">
 			<input class="form-control" asp-for="Authors" />
 			<span asp-validation-for="Authors" class="text-danger"></span>
@@ -45,7 +45,7 @@ else if (Model.successMessage.Length > 0)
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Pages</label>
+		<label class="col-sm-3 col-form-label">Số trang</label>
 		<div class="col-sm-6">
 			<input class="form-control" asp-for="NumPages" />
 			<span asp-validation-for="NumPages" class="text-danger"></span>
@@ -53,7 +53,7 @@ else if (Model.successMessage.Length > 0)
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Price</label>
+		<label class="col-sm-3 col-form-label">Giá</label>
 		<div class="col-sm-6">
 			<input class="form-control" asp-for="Price" />
 			<span asp-validation-for="Price" class="text-danger"></span>
@@ -61,7 +61,7 @@ else if (Model.successMessage.Length > 0)
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Category</label>
+		<label class="col-sm-3 col-form-label">Thể loại</label>
 		<div class="col-sm-6">
 			<select class="form-select" asp-for="Category">
 				<option value="Other">Other</option>
@@ -76,7 +76,7 @@ else if (Model.successMessage.Length > 0)
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Description</label>
+		<label class="col-sm-3 col-form-label">Mô tả</label>
 		<div class="col-sm-6">
 			<textarea class="form-control" asp-for="Description"></textarea>
 			<span asp-validation-for="Description" class="text-danger"></span>
@@ -84,7 +84,7 @@ else if (Model.successMessage.Length > 0)
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Image</label>
+		<label class="col-sm-3 col-form-label">Ảnh</label>
 		<div class="col-sm-6">
 			<input class="form-control" asp-for="ImageFile" />
 			<span asp-validation-for="ImageFile" class="text-danger"></span>
@@ -93,10 +93,10 @@ else if (Model.successMessage.Length > 0)
 
 	<div class="row mb-3">
 		<div class="offset-sm-3 col-sm-3 d-gird">
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary">Lưu</button>
 		</div>
 		<div class="col-sm-3 d-gird">
-			<a class="btn btn-outline-primary" href="/Admin/Books/Index" role="button">Cancel</a>
+			<a class="btn btn-outline-primary" href="/Admin/Books/Index" role="button">Trở về</a>
 		</div>
 	</div>
 </form>

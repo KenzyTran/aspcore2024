@@ -2,7 +2,7 @@
 @model Bestshop.Pages.Admin.Books.EditModel
 @{
 }
-<h3 class="my-3">Edit Book</h3>
+<h3 class="my-3">Chỉnh sửa sách</h3>
 
 @if (Model.errorMessage.Length > 0)
 {
@@ -91,7 +91,7 @@ else if(Model.successMessage.Length > 0)
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Image</label>
+		<label class="col-sm-3 col-form-label">Ảnh</label>
 		<div class="col-sm-6">
 			<img src="/images/books/@Model.ImageFileName" width="100"/>
 			<input type="hidden" asp-for="ImageFileName"/>
@@ -99,7 +99,7 @@ else if(Model.successMessage.Length > 0)
 	</div>
 
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">New Image</label>
+		<label class="col-sm-3 col-form-label">Ảnh mới</label>
 		<div class="col-sm-6">
 			<input class="form-control" asp-for="ImageFile" />
 			<span asp-validation-for="ImageFile" class="text-danger"></span>
@@ -108,7 +108,7 @@ else if(Model.successMessage.Length > 0)
 
 	<div class="row mb-3">
 		<div class="offset-sm-3 col-sm-3 d-gird">
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary">Lưu</button>
 		</div>
 		<div class="col-sm-3 d-gird">
 			<a class="btn btn-outline-primary" href="/Admin/Books/Index" role="button">Trở về</a>

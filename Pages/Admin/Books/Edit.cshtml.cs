@@ -1,4 +1,4 @@
-using Bestshop.MyHelpers;
+﻿using Bestshop.MyHelpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
@@ -14,34 +14,34 @@ namespace Bestshop.Pages.Admin.Books
         public int Id { get; set; }
 
 		[BindProperty]
-		[Required(ErrorMessage = "The Title is required")]
-		[MaxLength(100, ErrorMessage = "The Title cannot exceed 100 characters")]
+		[Required(ErrorMessage = "Vui lòng điền tên sách")]
+		[MaxLength(100, ErrorMessage = "Tiêu đề sách không thể vượt quá 100 ký tự")]
 		public string Title { get; set; } = "";
 
 		[BindProperty]
-		[Required(ErrorMessage = "Authors is required")]
-		[MaxLength(255, ErrorMessage = "The Authors cannot exceed 255 characters")]
+		[Required(ErrorMessage = "Vui lòng điền tên tác giả")]
+		[MaxLength(255, ErrorMessage = "Tên tác giả không thể vượt quá 255 ký tự")]
 		public string Authors { get; set; } = "";
 
 		[BindProperty]
-		[Required(ErrorMessage = "The ISBN is required")]
-		[MaxLength(20, ErrorMessage = "The ISBN cannot exceed 100 characters")]
+		[Required(ErrorMessage = "Vui lòng điền ISBN")]
+		[MaxLength(20, ErrorMessage = "ISBN không được vượt quá 100 ký tự")]
 		public string ISBN { get; set; } = "";
 
 		[BindProperty]
-		[Required(ErrorMessage = "The Number of Pages is required")]
-		[Range(1, 10000, ErrorMessage = "The Number of Pages must be in the range from 1 to 10000")]
+		[Required(ErrorMessage = "Vui lòng điền số trang của sách")]
+		[Range(1, 10000, ErrorMessage = "Số trang phải nằm trong khoảng từ 1 đến 10000")]
 		public int NumPages { get; set; }
 
 		[BindProperty]
-		[Required(ErrorMessage = "The Price is required")]
+		[Required(ErrorMessage = "Vui lòng điền giá sách")]
 		public decimal Price { get; set; }
 
 		[BindProperty]
 		public string Category { get; set; } = "";
 
 		[BindProperty]
-		[MaxLength(1000, ErrorMessage = "The Description cannot exceed 1000 characters")]
+		[MaxLength(1000, ErrorMessage = "Mô tả không thể vượt quá 1000 ký tự")]
 		public string? Description { get; set; } = "";
 
 		[BindProperty]
@@ -118,7 +118,7 @@ namespace Bestshop.Pages.Admin.Books
 
 			if (Description == null) Description = "";
 
-			//if we have a new ImageFile => upload the new image and delete the old image
+			//nếu có ImageFile mới => tải hình ảnh mới lên và xóa hình ảnh cũ
 			string newFileName = ImageFileName;
 			if(ImageFile != null)
 			{
@@ -133,13 +133,13 @@ namespace Bestshop.Pages.Admin.Books
 					ImageFile.CopyTo(stream);
 				}
 
-				//delete old image
+				//xóa ảnh cũ
 				string oldImageFullPath = Path.Combine(imageFolder, ImageFileName);
 				System.IO.File.Delete(oldImageFullPath);
                 Console.WriteLine("Delete Image " + oldImageFullPath);
             }
 
-			//update the book data in the database
+			//cập nhật lại sách vào database
 
 			try
 			{

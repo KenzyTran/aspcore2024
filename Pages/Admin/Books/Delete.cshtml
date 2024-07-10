@@ -12,7 +12,7 @@
 		using (SqlConnection connection = new SqlConnection(connectionString))
 		{
 			connection.Open();
-			//delete the book image from /images/books
+			//xóa hình ảnh của sách from /images/books
 			string sqlSelect = "SELECT image_filename FROM books WHERE id=@id";
 			using (SqlCommand command = new SqlCommand(sqlSelect, connection))
 			{
@@ -29,7 +29,7 @@
 				}
 			}
 
-			//delete the book from database
+			//xóa sách khỏi database
 			string sql = "DELETE FROM books WHERE id=@id";
 			using (SqlCommand command = new SqlCommand(sql, connection))
 			{

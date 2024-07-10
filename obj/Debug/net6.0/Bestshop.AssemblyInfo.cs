@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bestshop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f96ba3705f5e9496257aab946ac398a95027970c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+adea6269a6cd42802fd96ad2319ba95aa4d1ef3f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bestshop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bestshop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

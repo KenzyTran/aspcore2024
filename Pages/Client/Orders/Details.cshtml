@@ -1,0 +1,77 @@
+﻿@page
+@model Bestshop.Pages.Client.Orders.DetailsModel
+@{
+}
+
+<h3 class="rounded p-2 my-2 text-white text-center" style="background-color: #08618d;">Chi tiết đơn hàng</h3>
+
+
+<div class="border rounded p-3 mb-3">
+    <h3>Đơn hàng</h3>
+
+    <table class="table">
+        <tr>
+            <td>Mã đơn hàng</td>
+            <td>@Model.orderInfo.id</td>
+        </tr>
+        <tr>
+            <td>Ngày đặt hàng</td>
+            <td>@Model.orderInfo.orderDate</td>
+        </tr>
+        <tr>
+            <td>Địa chỉ giao hàng</td>
+            <td>@Model.orderInfo.deliveryAddress</td>
+        </tr>
+        <tr>
+            <td>Phương thức thanh toán</td>
+            <td>@Model.orderInfo.paymentMethod</td>
+        </tr>
+        <tr>
+            <td>Trạng thái thanh toán</td>
+            <td>
+                @Model.orderInfo.paymentStatus
+            </td>
+        </tr>
+        <tr>
+            <td>Trạng thái đơn hàng</td>
+            <td>
+                @Model.orderInfo.orderStatus
+            </td>
+        </tr>
+    </table>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mô tả</th>
+            <th style="width:100px">Số lượng</th>
+            <th style="width:100px">Đơn giá</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            decimal subtotal = 0;
+        }
+        @foreach (var item in Model.orderInfo.items)
+        {
+            subtotal += item.unitPrice * item.quantity;
+
+            <tr>
+                <td>
+                    <h3>@item.bookInfo.Title</h3>
+                    @item.bookInfo.Authors<br>
+                    @(item.unitPrice)$
+                </td>
+                <td>@item.quantity</td>
+                <td>@(item.unitPrice * item.quantity)$</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="text-end m-3">
+    <strong>Tiền hàng:</strong> @(subtotal)$<br />
+    <strong>Phí ship:</strong> @(Model.orderInfo.shippingFee)$<br />
+    <strong>Tổng tiền:</strong> @(subtotal + Model.orderInfo.shippingFee)$ <br />
+</div>

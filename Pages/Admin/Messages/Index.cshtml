@@ -4,18 +4,18 @@
 }
 
 <br>
-<h2>Received Messages</h2>
+<h2>Tin nhắn đã nhận</h2>
 
 <table class="table">
     <thead>
         <tr>
             <th>ID</th>
-            <th>Username</th>
+            <th>Tên người dùng</th>
             <th>Email</th>
-            <th>Phone</th>
-            <th>Subject</th>
-            <th>Created At</th>
-            <th>Action</th>
+            <th>Số điện thoại</th>
+            <th>Yêu cầu</th>
+            <th>Ngày tạo</th>
+            <th>Hành động</th>
         </tr>
     </thead>
     <tbody>
@@ -29,8 +29,8 @@
                 <td>@item.Subject</td>
                 <td>@item.CreatedAt</td>
                 <td style="white-space:nowrap">
-                    <a class="btn btn-primary btn-sm" href="/Admin/Messages/Details?id=@item.Id">Details</a> 
-                    <a class="btn btn-danger btn-sm" href="/Admin/Messages/Delete?id=@item.Id">Delete</a>
+                    <a class="btn btn-primary btn-sm" href="/Admin/Messages/Details?id=@item.Id">Chi tiết</a> 
+                    <a class="btn btn-danger btn-sm" href="/Admin/Messages/Delete?id=@item.Id">Xóa</a>
                 </td>
             </tr>
         }

@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Bestshop</title>
+    <title>Bestshop</title>
+    <link rel="icon" href="/images/icon.png"/>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Bestshop.styles.css" asp-append-version="true" />
@@ -16,13 +17,13 @@
         if (oldCartValue) oldCartValue += "-";
         let newCartValue = oldCartValue + bookID;
 
-        //update cookie
+        //cập nhật cookie
         let d = new Date();
-        d.setDate(d.getDate() + 365); //this cookie expires afer 365 days
+        d.setDate(d.getDate() + 365); //cookie này hết hạn sau 365 ngày
         let expires = d.toUTCString();
         document.cookie = "shopping_cart=" + newCartValue + ";expires=" + expires + ";path=/";
 
-        //update the number of books in the shopping cart
+        //cập nhật số lượng sách trong giỏ hàng
         let booksArray = newCartValue.split("-");
         let count = booksArray.length;
         document.getElementById("BookCountBadge").innerHTML = count;
@@ -50,7 +51,9 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Bestshop</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    <img src="/images/icon.png" width="30" height="30" alt="" /> Best shop
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -122,7 +125,7 @@
                                     Client
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" asp-page="/Index">Home</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Client/Orders/Index">Đơn hàng</a></li>
                                     <li><a class="dropdown-item" asp-page="/Profile">Hồ sơ</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" asp-page="/Auth/Logout">Thoát</a></li>
@@ -136,7 +139,7 @@
     </header>
     @if(ViewData["NoContainer"] == null)
     {
-        <div class="container">
+        <div class="container mt-3">
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
@@ -149,7 +152,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - Bestshop - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2024 - Best shop - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 

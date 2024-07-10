@@ -19,12 +19,40 @@ namespace Bestshop.Pages.Admin.Orders
                 Response.Redirect("/Admin/Orders/Index");
                 return;
             }
+
+            string paymentStatus = Request.Query["payment_status"];
+            string orderStatus = Request.Query["order_status"];
+
             try
             {
                 string connectionString = "Data Source=.\\sqlexpress;Initial Catalog=bestshop;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
+
+                    if (paymentStatus != null)
+                    {
+                        string sqlUpdate = "UPDATE orders SET payment_status=@payment_status WHERE id=@id";
+                        using (SqlCommand command = new SqlCommand(sqlUpdate, connection))
+                        {
+                            command.Parameters.AddWithValue("@payment_status", paymentStatus);
+                            command.Parameters.AddWithValue("@id", id);
+
+                            command.ExecuteNonQuery();
+                        }
+                    }
+
+                    if (orderStatus != null)
+                    {
+                        string sqlUpdate = "UPDATE orders SET order_status=@order_status WHERE id=@id";
+                        using (SqlCommand command = new SqlCommand(sqlUpdate, connection))
+                        {
+                            command.Parameters.AddWithValue("@order_status", orderStatus);
+                            command.Parameters.AddWithValue("@id", id);
+
+                            command.ExecuteNonQuery();
+                        }
+                    }
 
                     string sql = "SELECT * FROM orders WHERE id=@id";
                     using (SqlCommand command = new SqlCommand(sql, connection))

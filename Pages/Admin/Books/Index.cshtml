@@ -3,15 +3,15 @@
 @{
 }
 
-<h2 class="my-3">List of Books</h2>
+<h2 class="my-3">Danh sách sách</h2>
 
 <div class="row mb-3">
 	<div class="col">
-		<a clas='btn btn-primary' href="/Admin/Books/Create">New book</a>
+		<a clas='btn btn-primary' href="/Admin/Books/Create">Thêm sách mới</a>
 	</div>
 	<div class="col">
 		<form class="d-flex">
-			<input class="form-control me-2" type="search" name="search" value="@Model.search" placeholder="Search by Title or Author"/>
+			<input class="form-control me-2" type="search" name="search" value="@Model.search" placeholder="Tìm kiếm bằng tên tiêu đề hoặc tên tác giả"/>
 			<button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
 		</form>
 	</div>
@@ -37,14 +37,14 @@
 	<thead>
 		<tr>
 			<th style="cursor: pointer;" onclick="sortTable('id')">ID</th>
-			<th style="cursor: pointer;" onclick="sortTable('title')">Title</th>
-			<th style="cursor: pointer;" onclick="sortTable('authors')">Authors</th>
-			<th style="cursor: pointer;" onclick="sortTable('num_pages')">Pages</th>
-			<th style="cursor: pointer;" onclick="sortTable('price')">Price</th>
-			<th style="cursor: pointer;" onclick="sortTable('category')">Category</th>
+			<th style="cursor: pointer;" onclick="sortTable('title')">Tên sách</th>
+			<th style="cursor: pointer;" onclick="sortTable('authors')">Tác giả</th>
+			<th style="cursor: pointer;" onclick="sortTable('num_pages')">Số trang</th>
+			<th style="cursor: pointer;" onclick="sortTable('price')">Giá</th>
+			<th style="cursor: pointer;" onclick="sortTable('category')">Thể loại</th>
 			<th>Image</th>
-			<th style="cursor: pointer;" onclick="sortTable('created_at')">Created At</th>
-			<th>Action</th>
+			<th style="cursor: pointer;" onclick="sortTable('created_at')">Ngày tạo</th>
+			<th>Hành động</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -60,8 +60,8 @@
 				<td><img src="/images/books/@item.ImageFileName" width="100"/></td>
 				<td>@item.CreatedAt</td>
 				<td style="white-space:nowrap">
-					<a class="btn btn-primary btn-sm" href="/Admin/Books/Edit?id=@item.Id">Edit</a>
-					<a class="btn btn-danger btn-sm" href="/Admin/Books/Delete?id=@item.Id">Delete</a>
+					<a class="btn btn-primary btn-sm" href="/Admin/Books/Edit?id=@item.Id">Chỉnh sửa</a>
+					<a class="btn btn-danger btn-sm" href="/Admin/Books/Delete?id=@item.Id">Xóa</a>
 				</td>
 			</tr>
 		}

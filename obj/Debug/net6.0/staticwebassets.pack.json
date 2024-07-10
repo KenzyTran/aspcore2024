@@ -81,6 +81,10 @@
       "PackagePath": "staticwebassets\\images\\books\\20240603084700354.webp"
     },
     {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\20240710195616259.jfif",
+      "PackagePath": "staticwebassets\\images\\books\\20240710195616259.jfif"
+    },
+    {
       "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\2286633-L.jpg",
       "PackagePath": "staticwebassets\\images\\books\\2286633-L.jpg"
     },
@@ -147,6 +151,10 @@
     {
       "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\9781573921091.jpg",
       "PackagePath": "staticwebassets\\images\\books\\9781573921091.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\icon.png",
+      "PackagePath": "staticwebassets\\images\\icon.png"
     },
     {
       "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\js\\site.js",

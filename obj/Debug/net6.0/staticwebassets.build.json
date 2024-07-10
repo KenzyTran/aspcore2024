@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nLEa8d7DlXDXiQlr1bNfgG0TVtLUExi3MSg8tsRFCyg=",
+  "Hash": "+G6W4qnI0WtoAH6/xtyi4faHyYu9Yg5e19F8TwWHksE=",
   "Source": "Bestshop",
   "BasePath": "_content/Bestshop",
   "Mode": "Default",
@@ -416,6 +416,25 @@
       "OriginalItemSpec": "wwwroot\\images\\books\\20240603084700354.webp"
     },
     {
+      "Identity": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\20240710195616259.jfif",
+      "SourceId": "Bestshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\",
+      "BasePath": "_content/Bestshop",
+      "RelativePath": "images/books/20240710195616259.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\books\\20240710195616259.jfif"
+    },
+    {
       "Identity": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\2286633-L.jpg",
       "SourceId": "Bestshop",
       "SourceType": "Discovered",
@@ -737,6 +756,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\books\\9781573921091.jpg"
+    },
+    {
+      "Identity": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\icon.png",
+      "SourceId": "Bestshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\",
+      "BasePath": "_content/Bestshop",
+      "RelativePath": "images/icon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icon.png"
     },
     {
       "Identity": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\js\\site.js",

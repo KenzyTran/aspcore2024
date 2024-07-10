@@ -2,3 +2,174 @@
 @model Bestshop.Pages.Admin.Orders.DetailsModel
 @{
 }
+<h3 class="rounded p-2 my-2 text-white text-center" style="background-color: #08618d;">Chi tiết đơn hàng</h3>
+
+<div class="row mb-3 py-3">
+	<div class="col-lg-6">
+		<div class="border rounded p-3 h-100">
+			<h3>Đơn hàng</h3>
+
+			<table class="table">
+				<tr>
+					<td>ID đơn hàng</td>
+					<td>@Model.orderInfo.id</td>
+				</tr>
+				<tr>
+					<td>Ngày đặt hàng</td>
+					<td>@Model.orderInfo.orderDate</td>
+				</tr>
+				<tr>
+					<td>Địa chỉ giao hàng</td>
+					<td>@Model.orderInfo.deliveryAddress</td>
+				</tr>
+				<tr>
+					<td>Phương thức thanh toán</td>
+					<td>@Model.orderInfo.paymentMethod</td>
+				</tr>
+				<tr>
+					<td>Trạng thái thanh toán</td>
+					<td>
+						<a href="#" data-bs-toggle="modal" data-bs-target="#paymentModal">
+							@Model.orderInfo.paymentStatus
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Trạng thái đơn hàng</td>
+					<td>
+						<a href="#" data-bs-toggle="modal" data-bs-target="#orderModal">
+							@Model.orderInfo.orderStatus
+						</a>
+					</td>
+				</tr>
+			</table>
+		
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="border rounded p-3 h-100">
+			<h3>Client</h3>
+
+			<table class="table">
+				<tr>
+					<td>Client ID</td>
+					<td>@Model.userInfo.id</td>
+				</tr>
+				<tr>
+					<td>Tên</td>
+					<td>@Model.userInfo.firstname @Model.userInfo.lastname</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td>@Model.userInfo.email</td>
+				</tr>
+				<tr>
+					<td>Số điện thoại</td>
+					<td>@Model.userInfo.phone</td>
+				</tr>
+				<tr>
+					<td>Địa chỉ</td>
+					<td>@Model.userInfo.address</td>
+				</tr>
+				<tr>
+					<td>Ngày tạo tài khoản</td>
+					<td>@Model.userInfo.createdAt</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Mô tả</th>
+			<th style="width:100px">Đơn vị</th>
+			<th style="width:100px">Số lượng</th>
+		</tr>
+	</thead>
+	<tbody>
+		@{
+			decimal subtotal = 0;
+		}
+		@foreach (var item in Model.orderInfo.items)
+		{
+			subtotal += item.unitPrice * item.quantity;
+
+			<tr>
+				<td>
+					<h3>@item.bookInfo.Title</h3>
+					@item.bookInfo.Authors<br>
+					@(item.unitPrice)$
+				</td>
+				<td>@item.quantity</td>
+				<td>@(item.unitPrice * item.quantity)$</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<div class="text-end m-3">
+	<strong>Tiền hàng:</strong> @(subtotal)$<br />
+	<strong>Phí ship:</strong> @(Model.orderInfo.shippingFee)$<br />
+	<strong>Tổng tiền:</strong> @(subtotal + Model.orderInfo.shippingFee)$ <br />
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Cập nhật trạng thái thanh toán</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<input type="hidden" name="id" value="@Model.orderInfo.id" />
+					<label>Trạng thái thanh toán</label>
+					<select class="form-select mb-2" name="payment_status" asp-for="orderInfo.paymentStatus">
+						<option value="pending">pending</option>
+						<option value="accepted">accepted</option>
+						<option value="canceled">canceled</option>
+					</select>
+					<button type="submit" class="btn btn-primary">Lưu</button>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Trở về</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Cập nhật trạng thái đơn hàng</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<input type="hidden" name="id" value="@Model.orderInfo.id" />
+					<label>Order Status</label>
+					<select class="form-select mb-2" name="order_status" asp-for="orderInfo.orderStatus">
+						<option value="created">created</option>
+						<option value="accepted">accepted</option>
+						<option value="canceled">canceled</option>
+						<option value="shipped">shipped</option>
+						<option value="delivered">delivered</option>
+						<option value="returned">returned</option>
+					</select>
+					<button type="submit" class="btn btn-primary">Lưu</button>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Trở về</button>
+			</div>
+		</div>
+	</div>
+</div>

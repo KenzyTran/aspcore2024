@@ -3,7 +3,7 @@
 @{
 }
 
-<h2 class="my-3">Message Details</h2>
+<h2 class="my-3">Chi tiết tin nhắn</h2>
 
 <div class="row mb-2">
 	<label class="col-sm-3 col-form-label">ID</label>
@@ -13,7 +13,7 @@
 </div>
 
 <div class="row mb-2">
-	<label class="col-sm-3 col-form-label">Username</label>
+	<label class="col-sm-3 col-form-label">Tên người dùng</label>
 	<div class="col-sm-7">
 		<input type="text" readonly class="form-control-plaintext" value="@Model.messageInfo.FirstName @Model.messageInfo.LastName">
 	</div>
@@ -27,28 +27,28 @@
 </div>
 
 <div class="row mb-2">
-	<label class="col-sm-3 col-form-label">Phone</label>
+	<label class="col-sm-3 col-form-label">Số điện thoại</label>
 	<div class="col-sm-7">
 		<input type="text" readonly class="form-control-plaintext" value="@Model.messageInfo.Phone">
 	</div>
 </div>
 
 <div class="row mb-2">
-	<label class="col-sm-3 col-form-label">Subject</label>
+	<label class="col-sm-3 col-form-label">Yêu cầu</label>
 	<div class="col-sm-7">
 		<input type="text" readonly class="form-control-plaintext" value="@Model.messageInfo.Subject">
 	</div>
 </div>
 
 <div class="row mb-2">
-	<label class="col-sm-3 col-form-label">Message</label>
+	<label class="col-sm-3 col-form-label">Tin nhắn</label>
 	<div class="col-sm-7">
 		<textarea readonly class="form-control">@Model.messageInfo.Message</textarea>
 	</div>
 </div>
 
 <div class="row mb-2">
-	<label class="col-sm-3 col-form-label">Created At</label>
+	<label class="col-sm-3 col-form-label">Ngày tạo</label>
 	<div class="col-sm-7">
 		<input type="text" readonly class="form-control-plaintext" value="@Model.messageInfo.CreatedAt">
 	</div>
