@@ -6,75 +6,107 @@
 <h2 class="rounded text-center text-white p-2" style="background-color: #08618d;">Chi tiết sách</h2>
 
 <div class="row">
-	<div class="col-md-3">
-		<div class="my-2 text-center sticky-top" style="top:10px;">
-			<image src="/images/books/@Model.bookInfo.ImageFileName" class="img-fluid rounded" alt="..." />
-			<button type="button" class="btn btn-warning btn-sm my-2" onclick="addToCart(this, @Model.bookInfo.Id)">
-				Thêm vào giỏ <i class="bi bi-cart4"></i>
-			</button>
-		</div>
-	</div>
-	<div class="col-md-9">
-		<div class="row mb-3">
-			<div class="col-md-4">
-				<h4>Tiêu đề</h4>
-			</div>
-			<div class="col-md-8">
-				<h4>@Model.bookInfo.Title</h4>
-			</div>
-		</div>
+    <div class="col-md-4">
+        <div class="my-2 text-center sticky-top" style="top:10px;">
+            <img src="/images/books/@Model.bookInfo.ImageFileName" class="img-fluid rounded border" alt="Book Image" style="max-width: 100%;" />
+            <div class="mt-2">
+                <span class="text-danger h4">@Model.bookInfo.Price VND</span> <!-- Set giá hiển thị lớn -->
+            </div>
+            <button type="button" class="btn btn-warning btn-lg mt-2" style="width: 100%;" onclick="addToCart(this, @Model.bookInfo.Id)">
+                Thêm vào giỏ <i class="bi bi-cart4"></i>
+            </button>
+            <p class="small text-muted mt-2">Giao hàng miễn phí cho đơn hàng từ 300,000 VND</p>
+        </div>
+    </div>
 
-		<div class="row mb-3">
-			<div class="col-md-4">
-				<strong>Tác giả</strong>
-			</div>
-			<div class="col-md-8">
-				@Model.bookInfo.Authors
-			</div>
-		</div>
+    <div class="col-md-8">
+        <h1 class="h3">@Model.bookInfo.Title</h1>
+        <div class="text-muted">
+            <p class="mb-1"><strong>Tác giả:</strong> @Model.bookInfo.Authors</p>
+            <p class="mb-1"><strong>Mã ISBN:</strong> @Model.bookInfo.Isbn</p>
+        </div>
 
-		<div class="row mb-3">
-			<div class="col-md-4">
-				<strong>ISNB</strong>
-			</div>
-			<div class="col-md-8">
-				@Model.bookInfo.Isbn
-			</div>
-		</div>
+        <!-- Đánh giá sao -->
+        <div class="d-flex align-items-center mb-3">
+            <div class="star-rating" style="font-size: 1.2rem; color: #ffc107;">
+                ★★★★☆ <!-- Đặt cứng để mô phỏng -->
+            </div>
+            <span class="ml-2 small">(100 đánh giá)</span> <!-- Thay bằng số đánh giá thực tế -->
+        </div>
 
-		<div class="row mb-3">
-			<div class="col-md-4">
-				<strong>Số trang</strong>
-			</div>
-			<div class="col-md-8">
-				@Model.bookInfo.NumPages
-			</div>
-		</div>
+        <!-- Thông số kỹ thuật -->
+        <ul class="list-unstyled">
+            <li><strong>Số trang:</strong> @Model.bookInfo.NumPages</li>
+            <li><strong>Thể loại:</strong> @Model.bookInfo.Category</li>
+        </ul>
 
-		<div class="row mb-3">
-			<div class="col-md-4">
-				<strong>Giá</strong>
-			</div>
-			<div class="col-md-8">
-				@Model.bookInfo.Price
-			</div>
-		</div>
+        <!-- Mô tả sách -->
+        <div class="mt-4">
+            <h5 class="mb-2">Mô tả sản phẩm</h5>
+            <p>@Model.bookInfo.Description</p>
+        </div>
 
-		<div class="row mb-3">
-			<div class="col-md-4">
-				<strong>Thể loại</strong>
-			</div>
-			<div class="col-md-8">
-				@Model.bookInfo.Category
-			</div>
-		</div>
+        <!-- Khuyến mãi -->
+        <div class="mt-4 p-3 border rounded">
+            <h6 class="text-success mb-2">Ưu đãi</h6>
+            <ul class="list-unstyled small">
+                <li>- Giảm 5% cho đơn hàng đầu tiên</li>
+                <li>- Nhập mã <strong>FREESHIP</strong> cho đơn hàng trên 300,000 VND</li>
+            </ul>
+        </div>
 
-		<p>
-			<strong>Mô tả:</strong>
-			<br />
-			@Model.bookInfo.Description
-		</p>
+        <!-- Vận chuyển và chính sách -->
+        <div class="shipping-info p-3 rounded" style="border: 1px solid #e0e0e0; background-color: #f8f9fa;">
+            <h5 class="font-weight-bold mb-2">Thông tin vận chuyển</h5>
 
-	</div>
+            <p class="text-muted mb-2">
+                Giao đến Q. 1, P. Bến Nghé, Hồ Chí Minh
+                <a href="#" class="text-primary ml-2">Đổi</a>
+            </p>
+
+            <div class="delivery-option mb-2 d-flex align-items-center">
+                <i class="bi bi-truck" style="font-size: 1.2rem; margin-right: 8px;"></i>
+                <div>
+                    <span>Giao Thứ Năm</span><br>
+                    <small class="text-muted">Trước 19h, 31/10:</small>
+                    <span class="text-dark font-weight-bold">7.700₫</span>
+                    <span class="text-muted" style="text-decoration: line-through; font-size: 0.9rem;">32.700₫</span>
+                </div>
+            </div>
+
+            <div class="freeship-info d-flex align-items-center">
+                <i class="bi bi-truck text-success" style="font-size: 1.2rem; margin-right: 8px;"></i>
+                <span class="text-muted">Freeship 10k đơn từ 45k, Freeship 25k đơn từ 100k</span>
+                <i class="bi bi-info-circle ml-1 text-muted" style="font-size: 0.9rem;"></i>
+            </div>
+        </div>
+
+        <!-- Dịch vụ bổ sung -->
+        <div class="additional-services p-3 mt-3 rounded" style="border: 1px solid #e0e0e0; background-color: #f8f9fa;">
+            <h5 class="font-weight-bold mb-3">Dịch vụ bổ sung</h5>
+
+            <div class="service-item d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex align-items-center">
+                    <img src="https://salt.tikicdn.com/ts/upload/73/4d/f7/f86e767bffc14aa3d6abed348630100b.png" alt="TikiCard Icon" style="width: 32px; height: 32px; margin-right: 10px;">
+                    <span>Ưu đãi đến 600k với thẻ TikiCard</span>
+                </div>
+                <a href="#" class="text-primary">Đăng ký</a>
+            </div>
+
+            <div class="service-item d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <img src="https://salt.tikicdn.com/ts/upload/2a/27/6a/7bbba1f6c93a1a42a3c314e7b5825f4c.png" alt="PayLater Icon" style="width: 32px; height: 32px; margin-right: 10px;">
+                    <span>Mua trước trả sau</span>
+                </div>
+                <a href="#" class="text-primary">Đăng ký</a>
+            </div>
+        </div>
+    </div>
 </div>
 
+<script>
+    function addToCart(button, bookId) {
+        // Thêm logic thêm vào giỏ hàng ở đây
+        alert("Đã thêm sản phẩm vào giỏ hàng!");
+    }
+</script>

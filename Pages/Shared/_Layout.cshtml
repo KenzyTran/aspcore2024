@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bestshop</title>
-    <link rel="icon" href="/images/icon.png"/>
+    <title>Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh</title>
+    <link rel="icon" href="/images/tiki-icon.png"/>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Bestshop.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
 </head>
 <script>
     function addToCart(button, bookID)
@@ -46,33 +47,60 @@
 
         return "";
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const placeholders = [
+            "Giao nhanh 2h",
+            "100% hàng thật",
+            "Miễn phí vận chuyển",
+            "Ưu đãi cực sốc"
+        ];
+
+        let currentIndex = 0;
+        const inputElement = document.getElementById("searchInput");
+
+        setInterval(function () {
+            currentIndex = (currentIndex + 1) % placeholders.length;
+            inputElement.setAttribute("placeholder", placeholders[currentIndex]);
+        }, 2000); // Thay đổi placeholder sau mỗi 2 giây
+    });
+
+    window.addEventListener("scroll", function () {
+        var footer = document.querySelector(".footer");
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            footer.classList.add("window-scrolled");
+        } else {
+            footer.classList.remove("window-scrolled");
+        }
+    });
 </script>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
             <div class="container">
+                    
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
-                    <img src="/images/icon.png" width="30" height="30" alt="" /> Best shop
+                    <div class="tiki-logo">
+                        <img src="https://salt.tikicdn.com/ts/upload/0e/07/78/ee828743c9afa9792cf20d75995e134e.png" width="96" height="40" alt="tiki-logo" />
+                        <span>Tốt & Nhanh</span>
+                    </div>
+                        
                 </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Books">Books</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Contact">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                <div class="navbar-collapse px-2" style="justify-content:space-between"> 
+
+                    <form class="d-flex" action="/Books" style="">
+                        <div class="search-container">
+                            <img class="icon-search" src="https://salt.tikicdn.com/ts/upload/33/d0/37/6fef2e788f00a16dc7d5a1dfc5d0e97a.png" alt="icon-search">
+                            <input class="form-control me-2" style="padding: 0 12rem" id="searchInput" name="search" placeholder="Giao nhanh 2h">
+                            <button class="btn btn-outline-light" type="submit">Tìm kiếm</button>
+                        </div>
+                    </form>
                     @{
                         string cookieValue = Context.Request.Cookies["shopping_cart"] ?? "";
                         int cartSize = 0;
@@ -81,22 +109,16 @@
                             cartSize = cookieValue.Split('-').Length;
                         }
                     }
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark me-2" asp-area="" asp-page="/Cart">
-                                <i class="bi bi-cart4 text-danger h3"></i>
-                                <span id="BookCountBadge" class="badge rounded-pill bg-danger" style="vertical-align: top;">
-                                    @cartSize
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
+                    <div style="display: flex">
                     <ul class="navbar-nav">
                         @if(Context.Session.GetString("role") == null)
                         {
-                            <li class="nav-item">
-                                <a class="btn btn-outline-primary me-2" asp-area="" asp-page="/Auth/Register">Đăng kí</a>
+                            <li class="nav-item btn btn-outline-primary">
+                                <img src="https://salt.tikicdn.com/ts/upload/07/d5/94/d7b6a3bd7d57d37ef6e437aa0de4821b.png" alt="header_header_account_img">
+                                <a class="" asp-area="" asp-page="/Auth/Register" style="text-decoration: none;">Tài khoản</a>
                             </li>
+
+
                             <li class="nav-item">
                                 <a class="btn btn-primary" asp-area="" asp-page="/Auth/Login">Đăng nhập</a>
                             </li>
@@ -133,26 +155,546 @@
                             </li>
                         }
                     </ul>
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark me-2" asp-area="" asp-page="/Cart">
+                                <img src="https://salt.tikicdn.com/ts/upload/51/e2/92/8ca7e2cc5ede8c09e34d1beb50267f4f.png" alt="Giỏ hàng" style="width: 24px; height: 24px; vertical-align: middle;">
+                                <span id="BookCountBadge" class="badge rounded-pill bg-danger" style="vertical-align: top;">
+                                    @cartSize
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
-    @if(ViewData["NoContainer"] == null)
-    {
-        <div class="container mt-3">
-            <main role="main" class="pb-3">
-                @RenderBody()
+
+    <div style="background-color:white" class="FreeShippingSection">
+        <a href="" class="FreeShippingLink">
+            
+            <div style="display:flex;gap:12px;align-items:center;flex-wrap: nowrap;">
+                <div style="color:#003EA1; white-space: nowrap;" class="FreeShippingCommitmentTitle">Cam kết</div>
+
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <picture class="ImageContainer">
+                        <source type="image/webp" srcset="https://salt.tikicdn.com/ts/upload/96/76/a3/16324a16c76ee4f507d5777608dab831.png">
+                        <img class="IconImage" src="https://salt.tikicdn.com/ts/upload/96/76/a3/16324a16c76ee4f507d5777608dab831.png" alt="icon-0" width="20" height="20">
+                    </picture>
+                    <div style="color:#27272A;font-size:12px;font-weight:500;white-space:nowrap">100% hàng thật</div>
+                </div>
+
+                <div class="Separator"></div>
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <picture class="ImageContainer">
+                        <source type="image/webp" srcset="https://salt.tikicdn.com/ts/upload/0b/f2/19/c03ae8f46956eca66845fb9aaadeca1e.png">
+                        <img class="IconImage" src="https://salt.tikicdn.com/ts/upload/0b/f2/19/c03ae8f46956eca66845fb9aaadeca1e.png" alt="icon-1" width="20" height="20">
+                    </picture>
+                    <div style="color:#27272A;font-size:12px;font-weight:500;white-space:nowrap">Hoàn 200% nếu hàng giả</div>
+                </div>
+                <div class="Separator"></div>
+
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <picture class="ImageContainer">
+                        <source type="image/webp" srcset="https://salt.tikicdn.com/ts/upload/3a/f4/7d/86ca29927e9b360dcec43dccb85d2061.png">
+                        <img class="IconImage" src="https://salt.tikicdn.com/ts/upload/3a/f4/7d/86ca29927e9b360dcec43dccb85d2061.png" alt="icon-2" width="20" height="20">
+                    </picture>
+                    <div style="color:#27272A;font-size:12px;font-weight:500;white-space:nowrap">30 ngày đổi trả</div>
+                </div>
+                <div class="Separator"></div>
+
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <picture class="ImageContainer">
+                        <source type="image/webp" srcset="https://salt.tikicdn.com/ts/upload/87/98/77/fc33e3d472fc4ce4bae8c835784b707a.png">
+                        <img class="IconImage" src="https://salt.tikicdn.com/ts/upload/87/98/77/fc33e3d472fc4ce4bae8c835784b707a.png" alt="icon-3" width="20" height="20">
+                    </picture>
+                    <div style="color:#27272A;font-size:12px;font-weight:500;white-space:nowrap">Giao nhanh 2h</div>
+                </div>
+                <div class="Separator"></div>
+
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <picture class="ImageContainer">
+                        <source type="image/webp" srcset="https://salt.tikicdn.com/ts/upload/6a/81/06/0675ef5512c275a594d5ec1d58c37861.png">
+                        <img class="IconImage" src="https://salt.tikicdn.com/ts/upload/6a/81/06/0675ef5512c275a594d5ec1d58c37861.png" alt="icon-4" width="20" height="20">
+                    </picture>
+                    <div style="color:#27272A;font-size:12px;font-weight:500;white-space:nowrap">Giá siêu rẻ</div>
+                </div>
+
+                <div class="Separator"></div>
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <picture class="ImageContainer">
+                        <source type="image/webp" srcset="https://salt.tikicdn.com/ts/upload/11/09/ec/456a2a8c308c2de089a34bbfef1c757b.png">
+                        <img class="IconImage" src="https://salt.tikicdn.com/ts/upload/11/09/ec/456a2a8c308c2de089a34bbfef1c757b.png" alt="icon-5" width="20" height="20">
+                    </picture>
+                    <div style="color:#27272A;font-size:12px;font-weight:500;white-space:nowrap">Freeship mọi đơn</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <div class="position-sticky" style="top: 0; height: 100vh; overflow-y: auto;">
+                    <div class="p-3 bg-light rounded">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Danh mục</span>
+                        </h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-area="" asp-page="/Index">
+                                    <i class="bi bi-house-door"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/Books">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/ed/20/60/afa9b3b474bf7ad70f10dd6443211d5f.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/ed/20/60/afa9b3b474bf7ad70f10dd6443211d5f.png 2x" width="32" height="32" alt="Nhà Sách Tiki" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Nhà sách Tiki
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/Contact">
+                                    <i class="bi bi-envelope"></i>
+                                    Contact
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/Privacy">
+                                    <i class="bi bi-shield-lock"></i>
+                                    Privacy
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/f6/22/46/7e2185d2cf1bca72d5aeac385a865b2b.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/f6/22/46/7e2185d2cf1bca72d5aeac385a865b2b.png 2x" width="32" height="32" alt="Nhà Cửa - Đời Sống" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Nhà cửa - Đời sống
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/54/c0/ff/fe98a4afa2d3e5142dc8096addc4e40b.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/54/c0/ff/fe98a4afa2d3e5142dc8096addc4e40b.png 2x" width="32" height="32" alt="Điện Thoại - Máy Tính Bảng" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Điện thoại - Máy tính bảng
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/13/64/43/226301adcc7660ffcf44a61bb6df99b7.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/13/64/43/226301adcc7660ffcf44a61bb6df99b7.png 2x" width="32" height="32" alt="Đồ Chơi - Mẹ &amp; Bé" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Đồ chơi - Mẹ & Bé
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/75/34/29/78e428fdd90408587181005f5cc3de32.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/75/34/29/78e428fdd90408587181005f5cc3de32.png 2x" width="32" height="32" alt="Thiết Bị Số - Phụ Kiện Số" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Thiết Bị Số - Phụ Kiện Số
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/61/d4/ea/e6ea3ffc1fcde3b6224d2bb691ea16a2.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/61/d4/ea/e6ea3ffc1fcde3b6224d2bb691ea16a2.png 2x" width="32" height="32" alt="Điện Gia Dụng" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Điện Gia Dụng
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/73/0e/89/bf5095601d17f9971d7a08a1ffe98a42.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/73/0e/89/bf5095601d17f9971d7a08a1ffe98a42.png 2x" width="32" height="32" alt="Làm Đẹp - Sức Khỏe" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Làm đẹp - Sức khỏe
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/69/f5/36/c6cd9e2849854630ed74ff1678db8f19.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/69/f5/36/c6cd9e2849854630ed74ff1678db8f19.png 2x" width="32" height="32" alt="Ô Tô - Xe Máy - Xe Đạp" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Ô Tô - Xe Máy - Xe Đạp
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/55/5b/80/48cbaafe144c25d5065786ecace86d38.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/55/5b/80/48cbaafe144c25d5065786ecace86d38.png 2x" width="32" height="32" alt="Thời trang nữ" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Thời trang nữ 
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <i class="bi bi-shield-lock"></i>
+                                    Bách Hóa Online
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/0b/5e/3d/00941c9eb338ea62a47d5b1e042843d8.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/0b/5e/3d/00941c9eb338ea62a47d5b1e042843d8.png 2x" width="32" height="32" alt="Thể Thao - Dã Ngoại" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Thể Thao - Dã Ngoại
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/00/5d/97/384ca1a678c4ee93a0886a204f47645d.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/00/5d/97/384ca1a678c4ee93a0886a204f47645d.png 2x" width="32" height="32" alt="Thời trang nam" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Thời trang nam
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/3c/e4/99/eeee1801c838468d94af9997ec2bbe42.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/3c/e4/99/eeee1801c838468d94af9997ec2bbe42.png 2x" width="32" height="32" alt="Cross Border - Hàng Quốc Tế" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Cross Border - Hàng Quốc Tế
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/92/b5/c0/3ffdb7dbfafd5f8330783e1df20747f6.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/92/b5/c0/3ffdb7dbfafd5f8330783e1df20747f6.png 2x" width="32" height="32" alt="Laptop - Máy Vi Tính - Linh kiện" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Laptop - Máy Vi Tính - Link kiện
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/d6/7f/6c/5d53b60efb9448b6a1609c825c29fa40.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/d6/7f/6c/5d53b60efb9448b6a1609c825c29fa40.png 2x" width="32" height="32" alt="Giày - Dép nam" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Giày - Dép nữ 
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/2d/7c/45/e4976f3fa4061ab310c11d2a1b759e5b.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/2d/7c/45/e4976f3fa4061ab310c11d2a1b759e5b.png 2x" width="32" height="32" alt="Máy Ảnh - Máy Quay Phim" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Máy ảnh - Máy Quay Phim
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/ca/53/64/49c6189a0e1c1bf7cb91b01ff6d3fe43.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/ca/53/64/49c6189a0e1c1bf7cb91b01ff6d3fe43.png 2x" width="32" height="32" alt="Phụ kiện thời trang" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Phụ kiện thời trang
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/1e/8c/08/d8b02f8a0d958c74539316e8cd437cbd.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/1e/8c/08/d8b02f8a0d958c74539316e8cd437cbd.png 2x" width="32" height="32" alt="NGON" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    NGON
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/8b/d4/a8/5924758b5c36f3b1c43b6843f52d6dd2.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/8b/d4/a8/5924758b5c36f3b1c43b6843f52d6dd2.png 2x" width="32" height="32" alt="Đồng hồ và Trang sức" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Đồng hồ và Trang sức
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/3e/c0/30/1110651bd36a3e0d9b962cf135c818ee.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/3e/c0/30/1110651bd36a3e0d9b962cf135c818ee.png 2x" width="32" height="32" alt="Balo và Vali" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Balo và Vali
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/0a/c9/7b/8e466bdf6d4a5f5e14665ce56e58631d.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/0a/c9/7b/8e466bdf6d4a5f5e14665ce56e58631d.png 2x" width="32" height="32" alt="Voucher - Dịch vụ" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Voucher - Dịch vụ
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/31/a7/94/6524d2ecbec216816d91b6066452e3f2.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/31/a7/94/6524d2ecbec216816d91b6066452e3f2.png 2x" width="32" height="32" alt="Túi thời trang nữ" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Túi thời trang nữ
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/category/9b/31/af/669e6a133118e5439d6c175e27c1f963.png 1x, https://salt.tikicdn.com/cache/100x100/ts/category/9b/31/af/669e6a133118e5439d6c175e27c1f963.png 2x" width="32" height="32" alt="Túi thời trang nam" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Túi thời trang nam
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/">
+                                    <img srcset="https://salt.tikicdn.com/assets/img/image.svg 1x, https://salt.tikicdn.com/assets/img/image.svg 2x" width="32" height="32" alt="Chăm sóc nhà cửa" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Chăm sóc nhà cửa
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="p-3 bg-light rounded">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Tiện ích</span>
+                        </h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-area="" asp-page="/Index">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/upload/1e/27/a7/e2c0e40b6dc45a3b5b0a8e59e2536f23.png 1x, https://salt.tikicdn.com/cache/100x100/ts/upload/1e/27/a7/e2c0e40b6dc45a3b5b0a8e59e2536f23.png 2x" width="32" height="32" alt="Ưu đãi thẻ, ví" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Ưu đãi thẻ, ví
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/Books">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/upload/4d/a3/cb/c86b6e4f17138195c026437458029d67.png 1x, https://salt.tikicdn.com/cache/100x100/ts/upload/4d/a3/cb/c86b6e4f17138195c026437458029d67.png 2x" width="32" height="32" alt="Đóng tiền, nạp thẻ" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Đóng tiền, nạp thẻ
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/Contact">
+                                    <img srcset="https://salt.tikicdn.com/cache/100x100/ts/tmp/6f/4e/41/93f72f323d5b42207ab851dfa39d44fb.png 1x, https://salt.tikicdn.com/cache/100x100/ts/tmp/6f/4e/41/93f72f323d5b42207ab851dfa39d44fb.png 2x" width="32" height="32" alt="Mua trước trả sau" style="width:32px;height:32px;opacity:1" class="styles__StyledImg-sc-p9s3t3-0 hbqSye">
+                                    Mua trước trả sau
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                @if (ViewData["NoContainer"] == null)
+                {
+                    <div class="container mt-3">
+                        @RenderBody()
+                    </div>
+                }
+                else
+                {
+                    @RenderBody()
+                }
             </main>
         </div>
-    }
-    else
-    {
-        @RenderBody()
-    }
+    </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer">
         <div class="container">
-            &copy; 2024 - Best shop - <a asp-area="" asp-page="/Privacy">Privacy</a>
+
+            <div class="footer-info">
+                <div class="container">
+                    <div class="row">
+                        <!-- Hỗ trợ khách hàng -->
+                        <div class="col-md-2">
+                            <h5>Hỗ trợ khách hàng</h5>
+                            <ul class="list-unstyled">
+                                <li>Hotline: <strong>1900-6035</strong></li>
+                                <li>(1000 đ/phút, 8-21h kể cả T7, CN)</li>
+                                <li>Các câu hỏi thường gặp</li>
+                                <li>Gửi yêu cầu hỗ trợ</li>
+                                <li>Đơn hàng đặt hàng</li>
+                                <li>Phương thức vận chuyển</li>
+                                <li>Chính sách trả góp</li>
+                                <li>Hỗ trợ khách hàng: hotro@tiki.vn</li>
+                            </ul>
+                        </div>
+
+                        <!-- Về Tiki -->
+                        <div class="col-md-2">
+                            <h5>Về Tiki</h5>
+                            <ul class="list-unstyled">
+                                <li>Giới thiệu Tiki</li>
+                                <li>Tiki Blog</li>
+                                <li>Tuyển dụng</li>
+                                <li>Chính sách bảo mật thanh toán</li>
+                                <li>Chính sách giải quyết khiếu nại</li>
+                                <li>Điều khoản sử dụng</li>
+                            </ul>
+                        </div>
+
+                        <!-- Hợp tác và liên kết -->
+                        <div class="col-md-2">
+                            <h5>Hợp tác và liên kết</h5>
+                            <ul class="list-unstyled">
+                                <li>Quy chế hoạt động Sàn GDTMĐT</li>
+                                <li>Bán hàng cùng Tiki</li>
+                            </ul>
+                            <h5>Chứng nhận bởi</h5>
+                            <img src="" alt="Chứng nhận" /> <!-- Để trống cho logo chứng nhận -->
+                        </div>
+
+                        <!-- Phương thức thanh toán -->
+                        <div class="col-md-2">
+                            <h5>Phương thức thanh toán</h5>
+                            <ul class="list-unstyled">
+                                <li><img src="" alt="Phương thức thanh toán" /> <!-- Để trống logo phương thức thanh toán --></li>
+                            </ul>
+                        </div>
+
+                        <!-- Kết nối với chúng tôi -->
+                        <div class="col-md-4">
+                            <h5>Kết nối với chúng tôi</h5>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><img src="" alt="Facebook" /></li>
+                                <li class="list-inline-item"><img src="" alt="Youtube" /></li>
+                                <li class="list-inline-item"><img src="" alt="Zalo" /></li>
+                            </ul>
+                            <h5>Tải ứng dụng trên điện thoại</h5>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><img src="" alt="App Store" /></li>
+                                <li class="list-inline-item"><img src="" alt="Google Play" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="tiki-logo">
+                        <span>Công ty TNHH TI KI</span>
+                        <span>52 Đường Út Tịch, Phường 4, Quận Tân Bình, TP Hồ Chí Minh</span>
+                        <span>Giấy chứng nhận đăng ký doanh nghiệp số 0309532909 do Sở Kế Hoạch và Đầu Tư Thành phố Hồ Chí Minh cấp lần đầu vào ngày 06/01/2010.</span>
+                        <span>Hotline: 1900 6035</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phần thêm Tiki - Thật nhanh, thật chất lượng, thật rẻ -->
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <h5 class="footer-title">Tiki - Thật nhanh, thật chất lượng, thật rẻ</h5>
+                    <p>Tiki có tất cả</p>
+                    <p>
+                        Với hàng triệu sản phẩm từ các thương hiệu, cửa hàng uy tín, hàng nghìn loại mặt hàng từ
+                        <a href="#">Điện thoại smartphone</a> tới <a href="#">Rau củ quả tươi</a>, kèm theo dịch vụ giao hàng siêu tốc
+                        TikiNOW, Tiki <br/> mang đến cho bạn một trải nghiệm mua sắm online bắt đầu bằng chữ tín. Thêm vào đó, ở Tiki bạn có thể dễ dàng
+                        sử dụng vô vàn các tiện ích khác như <a href="#">mua thẻ cào</a>, <a href="#">thanh toán hóa đơn điện nước</a>,
+                        <a href="#">các dịch vụ bảo hiểm</a>.
+                    </p>
+                    <p>Khuyến mãi, ưu đãi tràn ngập</p>
+                    <p>
+                        Bạn muốn săn giá sốc, Tiki có <a href="#">giá sốc mỗi ngày</a> cho bạn! Bạn là tín đồ của các thương hiệu, các
+                        <a href="#">cửa hàng Official chính hãng</a> đang chờ đón bạn. Không cần săn mã freeship, vì Tiki đã có hàng <br />triệu
+                        sản phẩm trong <a href="#">chương trình Freeship+</a>, không giới hạn lượt đặt, tiết kiệm thời gian vàng bạc của bạn.
+                        Mua thêm gói <a href="#">TikiNOW tiết kiệm</a> để nhận 100% free ship 2h & trong ngày, hoặc mua gói <br /> TikiNOW cao cấp
+                        để nhận được 100% freeship, áp dụng cho 100% sản phẩm, 100% tinh thành Việt Nam. Bạn muốn tiết kiệm hơn nữa?
+                        Đã có <a href="#">TikiCARD</a>, thẻ tín dụng Tiki hoàn tiền 15% trên mọi giao dịch (tối đa hoàn 600k/tháng).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Thêm phần Thương Hiệu Nổi Bật -->
+            <div class="row mt-3">
+                <div class="col-12">
+                    <h5 class="footer-title">Thương Hiệu Nổi Bật</h5>
+                    <ul class="footer-brands">
+                        <li>vascara</li>
+                        <li>dior</li>
+                        <li>esteelauder</li>
+                        <li>th true milk</li>
+                        <li>barbie</li>
+                        <li>owen</li>
+                        <li>ensure</li>
+                        <li>durex</li>
+                        <li>bioderma</li>
+                        <li>elly</li>
+                        <li>milo</li>
+                        <li>skechers</li>
+                        <li>aldo</li>
+                        <li>triumph</li>
+                        <li>nutifood</li>
+                        <li>comfort</li>
+                        <li>bitas</li>
+                        <li>shiseido</li>
+                        <li>langfarm</li>
+                        <li>hukan</li>
+                        <li>vichy</li>
+                        <li>fila</li>
+                        <li>tsubaki</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-category">
+                <div class="container">
+                    <h5 class="footer-title">Danh Mục Sản Phẩm</h5>
+                    <div class="row">
+                        <!-- Column 1 -->
+                        <div class="col-md-3">
+                            <ul class="list-unstyled">
+                                <li><strong>Đồ Chơi - Mẹ & Bé</strong></li>
+                                <li>Thời Trang Cho Mẹ Và Bé / Đồ <br />chơi / Đồ dùng cho bé / Chăm sóc nhà cửa</li>
+                                <li>Dinh dưỡng cho bé / Tã, Bỉm / Dinh dưỡng cho người<br /> lớn / Dinh dưỡng cho mẹ mang thai</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Thực Phẩm Tươi Sống</strong></li>
+                                <li>Trái Cây / Thịt, Trứng, Cá, Thủy hải <br /> sản / Rau củ quả / Thực phẩm Việt / Sữa, phô mai</li>
+                                <li>Đồ uống, Bánh kẹo, Giỏ quà / Chăm sóc cá<br /> nhân / Chăm sóc nhà cửa</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Điện Thoại - Máy Tính Bảng</strong></li>
+                                <li>Điện thoại Smartphone / Điện thoại <br /> bàn / Điện thoại phổ thông</li>
+                                <li>Máy đọc sách / Máy tính bảng</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Làm Đẹp - Sức Khỏe</strong></li>
+                                <li>Chăm sóc da mặt / Trang điểm / Chăm sóc tóc</li>
+                                <li>Chăm sóc cơ thể / Thiết bị chăm sóc sức khỏe</li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 2 -->
+                        <div class="col-md-3">
+                            <ul class="list-unstyled">
+                                <li><strong>Thời Trang Nữ</strong></li>
+                                <li>Áo Nữ / Đầm Nữ / Quần Nữ / Áo Liền Quần</li>
+                                <li>Đồ Bơi Nữ / Đồ Lót Nữ / Chăm sóc thời trang nữ</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Thời Trang Nam</strong></li>
+                                <li>Áo Sơ Mi Nam / Áo Vest, Blazer Nam / Áo Khoác Nam</li>
+                                <li>Quần Jeans Nam / Đồ lót nam / Đồ ngủ nam</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Giày - Dép Nữ</strong></li>
+                                <li>Giày Cao Gót / Giày Sandals Nữ / Giày Thể Thao Nữ</li>
+                                <li>Giày Boots Nữ / Giày Lười Nữ</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Giày - Dép Nam</strong></li>
+                                <li>Giày Lười Nam / Giày Thể Thao Nam / Giày Sandals Nam</li>
+                                <li>Giày Boots Nam</li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3 -->
+                        <div class="col-md-3">
+                            <ul class="list-unstyled">
+                                <li><strong>Balo và Vali</strong></li>
+                                <li>Balo / Túi đựng laptop và phụ kiện / Vali, Phụ kiện du lịch</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Phụ Kiện Thời Trang</strong></li>
+                                <li>Phụ kiện thời trang nam / Phụ kiện thời trang nữ</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Đồng Hồ và Trang Sức</strong></li>
+                                <li>Đồng hồ Nam / Đồng hồ Nữ / Phụ kiện đồng hồ</li>
+                                <li>Trang sức nam / Trang sức nữ</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Laptop - Máy Vi Tính - Linh Kiện</strong></li>
+                                <li>Laptop / Thiết bị văn phòng / Linh kiện máy tính</li>
+                                <li>Thiết bị ngoại vi / Thiết bị lưu trữ</li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 4 -->
+                        <div class="col-md-3">
+                            <ul class="list-unstyled">
+                                <li><strong>Hàng Quốc Tế</strong></li>
+                                <li>Đồ chơi / Thời trang / Thực phẩm chức năng / Mỹ phẩm</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Điện Tử - Điện Lạnh</strong></li>
+                                <li>Phụ kiện điện tử / Tủ lạnh / Máy giặt / Máy nước nóng</li>
+                                <li>TV / Máy điều hòa / Máy sấy tóc</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Voucher - Dịch Vụ</strong></li>
+                                <li>Thanh toán hóa đơn / Dịch vụ spa / Thẩm mỹ viện</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Ô Tô - Xe Máy - Xe Đạp</strong></li>
+                                <li>Phụ kiện ô tô / Phụ kiện xe máy / Xe đạp</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><strong>Nhà Sách Tiki</strong></li>
+                                <li>Sách tiếng Việt / Sách tiếng Anh</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </footer>
 

@@ -20,32 +20,172 @@
     .book-item:hover {
             transform: scale(1.05);
     }
+
+        .book-item .card-body {
+            position: relative;
+            padding-bottom: 40px; /* Chừa khoảng trống để dòng "NOW giao siêu tốc 2h" */
+        }
+
+    .now-delivery {
+        position: absolute;
+        bottom: 10px; /* Đặt dòng chữ ở dưới cùng của thẻ */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        color: red;
+        white-space: nowrap; /* Đảm bảo dòng chữ không bị xuống dòng */
+    }
+
+    .book-item h4 {
+        margin-bottom: 15px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .slideshow-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .mySlides {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .mySlides img {
+            width: 49%;
+            /* Loại bỏ float và margin-right */
+        }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 16px;
+        color: black;
+        font-weight: bold;
+        font-size: 30px;
+        user-select: none;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 0 3px 3px 0;
+    }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+    .banner-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-item {
+        text-align: center;
+        padding: 10px;
+    }
+
+        .icon-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+            border-radius: 50%;
+            background-color: #e0e0e0; /* Chỗ này để chừa chỗ cho icon */
+        }
+
+        .icon-item p {
+            font-size: 14px;
+            color: #333;
+            margin: 0;
+        }
 </style>
 
+
 <!-- Phần giới thiệu -->
-<div class="py-5" style="background-color: #08618d;">
-    <div class="container text-white">
-        <div class="row">
-            <div class="col-md-6 pb-3">
-                <h1 class="display-2"><strong>Sách nổi bật</strong></h1>
-                <br />
-                <p>
-                    Chúng tôi có những cuốn sách hay nhất trên thế giới. Bạn sẽ thích đọc chúng.
-                    Chúng tôi có nhiều lựa chọn sách từ các thể loại khác nhau.
-                    Bạn chắc chắn sẽ tìm thấy điều khiến bạn vui vẻ.
-                </p>
-                <br />
-                <form class="d-flex" action="/Books">
-                    <input class="form-control me-2" name="search" placeholder="Tìm kiếm theo tên sách hoặc tên tác giả">
-                    <button class="btn btn-outline-light" type="submit">Tìm kiếm</button>
-                </form>
+<div class="slideshow-container">
 
+    <!-- Slide 1 -->
+    <div class="mySlides">
+        <img src="~/images/banner1.jpg" alt="Banner 1">
+        <img src="~/images/banner2.jpg" alt="Banner 2">
+    </div>
 
-            </div>
-            <div class="col-md-6">
-                <img src="/images/books.png" class="img-fluid rounded" alt="">
-            </div>
-        </div>
+    <!-- Slide 2 -->
+    <div class="mySlides">
+        <img src="~/images/banner3.jpg" alt="Banner 3">
+        <img src="~/images/banner4.jpg" alt="Banner 4">
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="mySlides">
+        <img src="~/images/banner5.jpg" alt="Banner 5">
+        <img src="~/images/banner6.jpg" alt="Banner 6">
+    </div>
+
+    <!-- Nút điều hướng -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<div class="banner-container">
+    <div class="icon-item">
+        <img src="https://salt.tikicdn.com/ts/upload/2f/52/8e/00ab5fbea9d35fcc3cadbc28d7c6b14e.png" alt="Icon Top Deal">
+        <p>TOP DEAL</p>
+    </div>
+    <div class="icon-item">
+        <img src="https://salt.tikicdn.com/ts/upload/64/cd/79/e93d0cacad10cca9f80824f99a8e36e0.png" alt="Icon Siêu Sale">
+        <p>Siêu Sale Tháng 10</p>
+    </div>
+    <div class="icon-item">
+        <img src="https://salt.tikicdn.com/ts/upload/64/cd/79/e93d0cacad10cca9f80824f99a8e36e0.png" alt="Icon Vòng Quay Tri Ân">
+        <p>Vòng Quay Tri Ân</p>
+    </div>
+    <div class="icon-item">
+        <img src="https://salt.tikicdn.com/ts/upload/ce/35/85/7aadb962661d07bab355c4084337203c.png" alt="Icon Tiki 14 năm">
+        <p>Tiki Nhìn Lại 14 năm</p>
+    </div>
+    <div class="icon-item">
+        <img src="https://salt.tikicdn.com/ts/upload/72/8d/23/a810d76829d245ddd87459150cb6bc77.png" alt="Icon Tiki Trading">
+        <p>Tiki Trading</p>
+    </div>
+    <div class="icon-item">
+        <img src="https://salt.tikicdn.com/cache/750x750/ts/upload/d7/b9/cf/185c3ea4d118574d7927f3d191575445.jpg" alt="Icon Cùng Mẹ Chăm Bé">
+        <p>Cùng mẹ chăm bé</p>
+    </div>
+    <div class="icon-item">
+        <img src="https://salt.tikicdn.com/cache/750x750/ts/upload/28/52/b2/e77e55676a38e02c5ac7242cc43f46dc.jpg" alt="Icon Một Sách Tiki">
+        <p>Một sách Tiki</p>
+    </div>
+    <div class="icon-item">
+        <img src="https://salt.tikicdn.com/cache/750x750/ts/upload/25/a7/1f/5538b19e95600da86e1241082fb631bf.jpg" alt="Icon Thế Giới Công Nghệ">
+        <p>Thế giới công nghệ</p>
+    </div>
+    <div class="icon-item">
+        <img src="https://salt.tikicdn.com/cache/750x750/ts/upload/03/f9/44/343e3b73c1e600e3c16b97843dc04bb1.jpg" alt="Icon Yêu Bếp Nghiện Nhà">
+        <p>Yêu bếp nghiện nhà</p>
+    </div>
+    <div class="icon-item">
+        <img src="https://salt.tikicdn.com/cache/750x750/ts/upload/ea/d3/81/a4ed0166b6abb19c3cfa3a48fadafd02.jpg.webp" alt="Icon Khỏe Đẹp Toàn Diện">
+        <p>Khỏe đẹp toàn diện</p>
     </div>
 </div>
 
@@ -54,23 +194,22 @@
     <div class="container">
         <h1 class="pb-5 text-center display-5"><strong>Sách mới nhất</strong></h1>
         <div class="row">
-           @foreach(var item in Model.listNewestBooks)
-           {
-                <div class="col-lg-3 col-sm-6 my-2">
-                    <div class="card shadow text-center h-100 book-item">
-                        <img src="/images/books/@item.ImageFileName" class="card-img-top p-3" alt="..." />
-                        <div class="card-body">
-                            <h4>@item.Title</h4>
-                            <p>Tác giả: @item.Authors, Thể loại: @item.Category, Số trang: @item.NumPages</p>
-                            <h4>@(item.Price)$</h4>
-                            <a class="btn btn-primary btn-sm my-2" href="/BookDetails?id=@(item.Id)" role="button">Chi tiết</a>
-                            <button type="button" class="btn btn-warning btn-sm my-2" onclick="addToCart(this, @item.Id)">
-                                Thêm vào giỏ <i class="bi bi-cart4"></i>
-                            </button>
+            @foreach (var item in Model.listNewestBooks)
+            {
+                <div class="col-lg-2 col-sm-6 my-2">
+                    <!-- Thẻ sản phẩm dẫn đến trang chi tiết -->
+                    <a href="/BookDetails?id=@(item.Id)" class="text-decoration-none text-dark">
+                        <div class="card shadow text-center h-100 book-item">
+                            <img src="/images/books/@item.ImageFileName" class="card-img-top p-3" alt="..." />
+                            <div class="card-body">
+                                <h4>@item.Title</h4>
+                                <h4>@(item.Price)$</h4>
+                            </div>
+                            <p class="now-delivery">NOW giao siêu tốc 2h</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
-           }
+            }
         </div>
     </div>
 </div>
@@ -82,21 +221,64 @@
         <div class="row">
             @foreach (var item in Model.listTopSales)
             {
-                <div class="col-lg-3 col-sm-6 my-2">
-                    <div class="card shadow text-center h-100 book-item">
-                        <img src="/images/books/@item.ImageFileName" class="card-img-top p-3" alt="..." />
-                        <div class="card-body">
-                            <h4>@item.Title</h4>
-                            <p>Tác giả: @item.Authors, Thể loại: @item.Category, Số trang: @item.NumPages</p>
-                            <h4>@(item.Price)$</h4>
-                            <a class="btn btn-primary btn-sm my-2" href="/BookDetails?id=@(item.Id)" role="button">Chi tiết</a>
-                            <button type="button" class="btn btn-warning btn-sm my-2" onclick="addToCart(this, @item.Id)">
-                                Thêm vào giỏ <i class="bi bi-cart4"></i>
-                            </button>
+                <div class="col-lg-2 col-sm-6 my-2">
+                    <!-- Thẻ sản phẩm dẫn đến trang chi tiết -->
+                    <a href="/BookDetails?id=@(item.Id)" class="text-decoration-none text-dark">
+                        <div class="card shadow text-center h-100 book-item">
+                            <img src="/images/books/@item.ImageFileName" class="card-img-top p-3" alt="..." />
+                            <div class="card-body">
+                                <h4>@item.Title</h4>
+                                <h4>@(item.Price)$</h4>
+                            </div>
+                            <p class="now-delivery">NOW giao siêu tốc 2h</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
             }
         </div>
     </div>
-</div>
+
+<script>
+    let slideIndex = 1;
+    let slideTimeout;
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+
+        // Nếu n được cung cấp, sử dụng nó; nếu không, sử dụng slideIndex hiện tại
+        if (n !== undefined) {
+            slideIndex = n;
+        }
+
+        // Vòng lại slide đầu tiên hoặc cuối cùng nếu cần
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        if (slideIndex < 1) { slideIndex = slides.length }
+
+        // Ẩn tất cả các slides
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        // Hiển thị slide hiện tại
+        slides[slideIndex - 1].style.display = "block";
+
+        // Xóa bất kỳ timeout nào trước đó để ngăn chặn nhiều bộ đếm thời gian chạy đồng thời
+        clearTimeout(slideTimeout);
+
+        // Thiết lập thời gian tự động chuyển slide
+        slideTimeout = setTimeout(function () {
+            showSlides(slideIndex + 1);
+        }, 10000); // Đổi slide mỗi giây
+    }
+
+    // Chức năng cho nút điều hướng
+    function plusSlides(n) {
+        showSlides(slideIndex + n);
+    }
+
+    // Bắt đầu slideshow
+    showSlides(slideIndex);
+
+
+</script>

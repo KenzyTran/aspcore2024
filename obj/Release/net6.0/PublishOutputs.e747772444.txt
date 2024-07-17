@@ -1,0 +1,16 @@
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\Bestshop.exe
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\appsettings.Development.json
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\appsettings.json
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\Bestshop.dll
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\Bestshop.deps.json
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\Bestshop.runtimeconfig.json
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\Bestshop.pdb
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\Newtonsoft.Json.dll
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\SendGrid.dll
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\StarkbankEcdsa.dll
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\System.Data.SqlClient.dll
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\runtimes\win-arm64\native\sni.dll
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\runtimes\win-x64\native\sni.dll
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\runtimes\win-x86\native\sni.dll
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USER\AppData\Local\Temp\97990fb4-c46e-4e9e-be69-af54d06bae88\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

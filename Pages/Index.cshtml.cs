@@ -20,7 +20,7 @@ namespace Bestshop.Pages
                 {
                     connection.Open();
 
-                    string sql = "SELECT TOP 4 * FROM books ORDER BY created_at DESC";
+                    string sql = "SELECT TOP 6 * FROM books ORDER BY created_at DESC";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -45,7 +45,7 @@ namespace Bestshop.Pages
                         }    
                     }
 
-                    sql = "SELECT TOP 4 books.*, (" +
+                    sql = "SELECT TOP 6 books.*, (" +
                        "SELECT SUM(order_items.quantity) FROM order_items WHERE books.id = order_items.book_id" +
                        ") AS total_sales " +
                        "FROM books " +

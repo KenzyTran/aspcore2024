@@ -1,0 +1,409 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\Bestshop.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Bestshop.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books.png",
+      "PackagePath": "staticwebassets\\images\\books.png"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\10590390-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\10590390-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\10744695-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\10744695-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\10967363-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\10967363-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\1167760-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\1167760-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\11736965-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\11736965-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\12643487-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\12643487-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\1558736-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\1558736-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\1630342-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\1630342-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\173276-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\173276-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\20221017212705973.jpeg",
+      "PackagePath": "staticwebassets\\images\\books\\20221017212705973.jpeg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\20240602085325463.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\20240602085325463.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\20240602085411689.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\20240602085411689.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\20240602085451239.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\20240602085451239.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\20240602085504511.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\20240602085504511.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\20240602085621994.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\20240602085621994.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\20240603084700354.webp",
+      "PackagePath": "staticwebassets\\images\\books\\20240603084700354.webp"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\20240710195616259.jfif",
+      "PackagePath": "staticwebassets\\images\\books\\20240710195616259.jfif"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\2286633-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\2286633-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\417327-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\417327-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\4641132-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\4641132-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\5295596-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\5295596-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\5738053-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\5738053-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\63529-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\63529-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\6601760-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\6601760-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\6689997-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\6689997-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\6972586-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\6972586-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\8052226-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\8052226-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\8188236-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\8188236-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\8365530-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\8365530-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\8460088-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\8460088-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\8989024-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\8989024-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\9153762-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\9153762-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\9297071-L.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\9297071-L.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books\\9781573921091.jpg",
+      "PackagePath": "staticwebassets\\images\\books\\9781573921091.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\icon.png",
+      "PackagePath": "staticwebassets\\images\\icon.png"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.Bestshop.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.build.Bestshop.props",
+      "PackagePath": "build\\Bestshop.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Bestshop.props",
+      "PackagePath": "buildMultiTargeting\\Bestshop.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildTransitive.Bestshop.props",
+      "PackagePath": "buildTransitive\\Bestshop.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

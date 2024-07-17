@@ -8,7 +8,8 @@ a.navbar-brand {
 }
 
 a {
-  color: #0077cc;
+    color: #0077cc;
+    text-decoration: none;
 }
 
 .btn-primary {
@@ -46,3 +47,319 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.tiki-logo {
+    display: flex;
+    flex-direction: column;
+}
+.tiki-logo > span {
+    font-size: 14px;
+    color: rgb(0, 62, 161);
+    margin-top: 8px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Thay đổi từ 100% thành auto để không chiếm hết chiều rộng */
+    border: 1px solid rgb(221, 221, 227);
+    border-radius: 8px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 96px;
+    height: 40px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 120%;
+}
+
+.search-container .icon-search {
+     margin-right: 10px;
+}
+
+.search-container .form-control {
+        border: none;
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 4px;
+        width: 100%;
+        
+ }
+
+.search-container .btn {
+        background-color: #0d5cb6;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        margin-left: 10px;
+        white-space: nowrap; /* Đảm bảo button không bị xuống dòng */
+}
+
+.search-container .btn:hover {
+     background-color: #0056b3;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: flex-end; /* Đẩy các mục về phía bên phải */
+}
+.nav-item {
+    margin-left: 5px;
+}
+
+.navbar-nav .nav-link, .btn {
+    margin-left: 0px; /* Loại bỏ khoảng cách thừa bên trái */
+}
+
+.icon-search {
+    width: 20px;
+    height: 20px;
+    margin: 0px 0px 0px 18px;
+}
+
+.nav-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    border-radius: 50%;
+}
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end; /* Đẩy các phần tử sang lề phải */
+    align-items: center;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+    padding-top: 15px;
+    font-size: 14px;
+}
+
+.sidebar .nav-link {
+    color: #333;
+}
+
+.sidebar .nav-link.active {
+    color: #007bff;
+}
+
+.sidebar .nav-link:hover {
+    color: #0056b3;
+}
+
+.sidebar-heading {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.rounded {
+    border-radius: .25rem !important;
+}
+
+
+/* Footer styles */
+.footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    color: #333;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: block; 
+}
+
+/* Ensure the footer appears only after scrolling the content */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px; /* Space for the footer */
+}
+
+    /* Show the footer only when reaching the bottom of the page */
+    body:after {
+        content: '';
+        display: block;
+        height: 60px; /* Same height as the footer */
+    }
+
+    /* Hiển thị footer chỉ khi cuộn hết nội dung */
+    body:after {
+        content: '';
+        display: block;
+        height: 60px; /* Chiều cao của footer */
+    }
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    color: #333;
+    font-size: 12px; /* Cỡ chữ nhỏ */
+    text-align: left; /* Căn trái */
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.footer-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000; /* Đổi màu chữ thành màu đen */
+    margin-bottom: 10px; /* Tạo khoảng cách dưới tiêu đề */
+    text-align: left; /* Căn trái */
+}
+
+.footer p, .footer a {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #333; /* Màu chữ chính là xám đậm */
+    text-align: left; /* Căn trái */
+}
+
+.footer a {
+    color: #0077cc; /* Đổi màu link */
+    text-decoration: none; /* Bỏ gạch chân */
+}
+
+.footer-brands {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Căn trái cho danh sách thương hiệu */
+}
+
+    .footer-brands li {
+        margin: 0 10px 5px 0; /* Căn trái và tạo khoảng cách */
+        font-size: 12px;
+        color: #0077cc; /* Màu xanh cho các thương hiệu */
+    }
+
+/* Căn chỉnh phần thương hiệu nổi bật sang trái */
+.container {
+    text-align: left; /* Căn toàn bộ container sang trái */
+}
+.tiki-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Căn trái cho phần nội dung */
+    font-size: 12px; /* Giảm cỡ chữ */
+    color: #333; /* Màu chữ chính */
+    line-height: 1.5;
+}
+
+    .tiki-logo span {
+        margin-bottom: 5px; /* Tạo khoảng cách giữa các dòng */
+        color: #333; /* Màu chữ chính */
+    }
+
+        .tiki-logo span a {
+            color: #0077cc; /* Màu chữ cho các liên kết */
+            text-decoration: none; /* Bỏ gạch chân dưới liên kết */
+        }
+
+
+.footer-info {
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 12px;
+}
+
+    .footer-info h5 {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .footer-info ul {
+        padding-left: 0;
+        list-style: none;
+        line-height: 1.8;
+        margin-bottom: 0;
+    }
+
+        .footer-info ul li {
+            color: #333;
+        }
+
+            .footer-info ul li a {
+                color: #0077cc;
+                text-decoration: none;
+            }
+
+                .footer-info ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    .footer-info .list-inline-item {
+        margin-right: 10px;
+    }
+
+        .footer-info .list-inline-item img {
+            width: 30px; /* Điều chỉnh kích thước cho icon */
+            height: 30px;
+        }
+
+.footer-category {
+    padding: 20px 0;
+    font-size: 12px;
+    color: #333;
+    border-top: 1px solid #e5e5e5;
+}
+
+    .footer-category h5 {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .footer-category ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+        .footer-category ul li {
+            line-height: 1.8;
+        }
+
+            .footer-category ul li strong {
+                color: #0077cc;
+            }

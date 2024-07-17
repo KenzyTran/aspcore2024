@@ -13,6 +13,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\banner1.jpg",
+      "PackagePath": "staticwebassets\\images\\banner1.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\banner2.jpg",
+      "PackagePath": "staticwebassets\\images\\banner2.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\banner3.jpg",
+      "PackagePath": "staticwebassets\\images\\banner3.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\banner4.jpg",
+      "PackagePath": "staticwebassets\\images\\banner4.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\banner5.jpg",
+      "PackagePath": "staticwebassets\\images\\banner5.jpg"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\banner6.jpg",
+      "PackagePath": "staticwebassets\\images\\banner6.jpg"
+    },
+    {
       "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\books.png",
       "PackagePath": "staticwebassets\\images\\books.png"
     },
@@ -155,6 +179,10 @@
     {
       "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\icon.png",
       "PackagePath": "staticwebassets\\images\\icon.png"
+    },
+    {
+      "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\images\\tiki-icon.png",
+      "PackagePath": "staticwebassets\\images\\tiki-icon.png"
     },
     {
       "Id": "D:\\22DH111836\\LTW\\Project\\Bestshop\\Bestshop\\wwwroot\\js\\site.js",
