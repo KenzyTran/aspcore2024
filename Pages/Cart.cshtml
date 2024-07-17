@@ -2,10 +2,9 @@
 @model Bestshop.Pages.CartModel
 @{
 }
-
 <div class="row border rounded-3">
     <div class="col-md-8 p-3">
-        <h4>Shopping Cart</h4>
+        <h4>Giỏ hàng</h4>
 
         @if (Model.errorMessage.Length > 0)
         {
@@ -40,9 +39,9 @@
                     <td>
                         <h4>@item.bookInfo.Title</h4>
                         <p>
-                            Authors: @item.bookInfo.Authors<br>
-                            Category: @item.bookInfo.Category<br>
-                            Price: @(item.bookInfo.Price)$
+                            Tác giả: @item.bookInfo.Authors<br>
+                            Thể loại: @item.bookInfo.Category<br>
+                            Giá: @(item.bookInfo.Price)$
                         </p>
                     </td>
                     <td>
@@ -56,20 +55,27 @@
                     </td>
                 </tr>
             }
-
-
         </table>
+
+        <form method="get" asp-page-handler="">
+            <div class="mb-3">
+                <label class="form-label">Mã Coupon</label>
+                <input type="text" class="form-control">
+                <button class="btn btn-primary mt-2" type="submit">Áp dụng</button>
+            </div>
+        </form>
+
     </div>
     <div class="col-md-4">
         <div class="text-white rounded my-2 p-3" style="background-color: #08618d;">
-            <h4>Thông tin đơn hàng</h4>
+            <h4>Tóm tắt đơn hàng</h4>
             <hr>
             @if (HttpContext.Session.GetString("role") == null)
             {
                 <div class="row">
                     <div class="col">
-                        <p>Tiền hàng:</p>
-                    </div>
+                        <p>Tiền sách:</p>
+                    </div>  
                     <div class="col">
                         <p class="text-end">@(Model.subtotal)$</p>
                     </div>
@@ -94,9 +100,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Phương thức thanh toán</label>
+                        <label class="form-label">Payment Method</label>
                         <select class="form-select" asp-for="PaymentMethod">
-                            <option value="cash">Tiền mặt</option>
+                            <option value="cash">Thanh toán bằng tiền mặt</option>
                             <option value="credit_card">Thẻ Credit</option>
                             <option value="paypal">Paypal</option>
                         </select>
@@ -106,7 +112,7 @@
 
                     <div class="row">
                         <div class="col">
-                            <p>Tiền hàng:</p>
+                            <p>Tiền sách:</p>
                         </div>
                         <div class="col">
                             <p class="text-end">@(Model.subtotal)$</p>
@@ -124,7 +130,7 @@
 
                     <div class="row">
                         <div class="col">
-                            <p>Tồng tiền:</p>
+                            <p>Tổng tiền:</p>
                         </div>
                         <div class="col">
                             <p class="text-end">@(Model.total)$</p>
