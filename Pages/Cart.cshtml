@@ -4,7 +4,6 @@
 }
 <div class="row border rounded-3">
     <div class="col-md-8 p-3">
-        <h4>Giỏ hàng</h4>
 
         @if (Model.errorMessage.Length > 0)
         {
@@ -21,40 +20,47 @@
             </div>
         }
 
-
-
         <table class="table align-middle">
-            <tr>
-                <td style="width:100px"></td>
-                <td></td>
-                <td style="width:140px"></td>
-                <td style="width:70px"></td>
-                <td style="width:30px"></td>
-            </tr>
-
-            @foreach (var item in Model.listOrderItems)
-            {
+            <thead>
                 <tr>
-                    <td><img src="/images/books/@item.bookInfo.ImageFileName" width="100" class="rounded" alt="..."></td>
-                    <td>
-                        <h4>@item.bookInfo.Title</h4>
-                        <p>
-                            Tác giả: @item.bookInfo.Authors<br>
-                            Thể loại: @item.bookInfo.Category<br>
-                            Giá: @(item.bookInfo.Price)$
-                        </p>
-                    </td>
-                    <td>
-                        <a href="/Cart?action=sub&id=@(item.bookInfo.Id)" class="btn btn-outline-secondary btn-sm" role="button">-</a>
-                        <span class="border rounded-3 p-2 m-1">@item.numCopies</span>
-                        <a href="/Cart?action=add&id=@(item.bookInfo.Id)" class="btn btn-outline-secondary btn-sm" role="button">+</a>
-                    </td>
-                    <td>@(item.totalPrice)$</td>
-                    <td>
-                        <a href="/Cart?action=delete&id=@(item.bookInfo.Id)"><i class="bi bi-trash text-danger h4"></i></a>
-                    </td>
+                    <th>Giỏ hàng</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th><img src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/trash.svg" width="20" alt="Delete Icon"></th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var item in Model.listOrderItems)
+                {
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-start">
+                                <img src="/images/books/@item.bookInfo.ImageFileName" width="100" class="rounded" alt="...">
+                                <div class="ms-3">
+                                    <h5 style="font-size: 14px;">@item.bookInfo.Title</h5>
+                                    <p class="mb-1">
+                                        <img src="https://salt.tikicdn.com/ts/tka/a8/31/b6/802e2c99dcce64c67aa2648edb15dd25.png" width="20" alt="Giao siêu tốc 2h"> Giao siêu tốc 2h
+                                    </p>
+                                    <p class="mb-0">Có thể bọc bằng Bookcare</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>@(item.bookInfo.Price)$</td>
+                        <td>
+                            <a href="/Cart?action=sub&id=@(item.bookInfo.Id)" class="btn btn-outline-secondary btn-sm">-</a>
+                            <span class="border rounded-3 p-2 m-1">@item.numCopies</span>
+                            <a href="/Cart?action=add&id=@(item.bookInfo.Id)" class="btn btn-outline-secondary btn-sm">+</a>
+                        </td>
+                        <td>@(item.totalPrice)$</td>
+                        <td>
+                            <a href="/Cart?action=delete&id=@(item.bookInfo.Id)" class="text-danger h4">
+                                <img src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/trash.svg" width="20" alt="Delete Icon">
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
         </table>
 
         <form method="get" asp-page-handler="">
@@ -66,6 +72,8 @@
         </form>
 
     </div>
+
+    <!-- Cột phải: Tóm tắt đơn hàng -->
     <div class="col-md-4">
         <div class="text-white rounded my-2 p-3" style="background-color: #08618d;">
             <h4>Tóm tắt đơn hàng</h4>
@@ -75,23 +83,24 @@
                 <div class="row">
                     <div class="col">
                         <p>Tiền sách:</p>
-                    </div>  
-                    <div class="col">
-                        <p class="text-end">@(Model.subtotal)$</p>
+                    </div>
+                    <div class="col text-end">
+                        <p>@(Model.subtotal)$</p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col d-grid">
-                        <a class="btn btn-light" href="/Auth/Register" role="button">Đăng kí</a>
+                        <a class="btn btn-light" href="/Auth/Register">Đăng kí</a>
                     </div>
                     <div class="col d-grid">
-                        <a class="btn btn-outline-light" href="/Auth/Login" role="button">Đăng nhập</a>
+                        <a class="btn btn-outline-light" href="/Auth/Login">Đăng nhập</a>
                     </div>
                 </div>
             }
             else
             {
+                <!-- Form địa chỉ và phương thức thanh toán -->
                 <form method="post">
                     <div class="mb-3">
                         <label class="form-label">Địa chỉ giao hàng</label>
@@ -100,9 +109,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Payment Method</label>
+                        <label class="form-label">Phương thức thanh toán</label>
                         <select class="form-select" asp-for="PaymentMethod">
-                            <option value="cash">Thanh toán bằng tiền mặt</option>
+                            <option value="cash">Tiền mặt</option>
                             <option value="credit_card">Thẻ Credit</option>
                             <option value="paypal">Paypal</option>
                         </select>
@@ -111,30 +120,16 @@
                     <hr>
 
                     <div class="row">
-                        <div class="col">
-                            <p>Tiền sách:</p>
-                        </div>
-                        <div class="col">
-                            <p class="text-end">@(Model.subtotal)$</p>
-                        </div>
+                        <div class="col">Tiền sách:</div>
+                        <div class="col text-end">@Model.subtotal$</div>
                     </div>
-
                     <div class="row">
-                        <div class="col">
-                            <p>Phí ship:</p>
-                        </div>
-                        <div class="col">
-                            <p class="text-end">@(Model.shippingFee)$</p>
-                        </div>
+                        <div class="col">Phí ship:</div>
+                        <div class="col text-end">@Model.shippingFee$</div>
                     </div>
-
                     <div class="row">
-                        <div class="col">
-                            <p>Tổng tiền:</p>
-                        </div>
-                        <div class="col">
-                            <p class="text-end">@(Model.total)$</p>
-                        </div>
+                        <div class="col">Tổng tiền:</div>
+                        <div class="col text-end">@Model.total$</div>
                     </div>
 
                     <div class="d-grid">

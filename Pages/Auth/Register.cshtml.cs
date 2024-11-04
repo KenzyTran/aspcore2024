@@ -12,20 +12,20 @@ namespace Bestshop.Pages.Auth
     [BindProperties]
     public class RegisterModel : PageModel
     {
-        [Required(ErrorMessage = "The First Name is required")]
+        [Required(ErrorMessage = "Vui lòng nhập họ và tên lót")]
         public string Firstname { get; set; } = "";
-        [Required(ErrorMessage = "The Last Name is required")]
+        [Required(ErrorMessage = "Vui lòng nhập tên")]
         public string Lastname { get; set; } = "";
-        [Required(ErrorMessage = "The Email is required"), EmailAddress]
+        [Required(ErrorMessage = "Vui lòng nhập Email"), EmailAddress]
         public string Email { get; set; } = "";
         public string? Phone { get; set; } = "";
-        [Required(ErrorMessage = "The Address is required")]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ")]
         public string Address { get; set; } = "";
-        [Required(ErrorMessage = "Password is required")]
-        [StringLength(50, ErrorMessage ="Password must be between 5 and 50 characters", MinimumLength =5)]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
+        [StringLength(50, ErrorMessage ="Mật khẩu phải từ 5 tới 50 kí tự", MinimumLength =5)]
         public string Password { get; set; } = "";
-        [Required(ErrorMessage = "Confirm Password is required")]
-        [Compare("Password", ErrorMessage = "Password and Confirm Password do not match")]
+        [Required(ErrorMessage = "Xác nhận lại mật khẩu")]
+        [Compare("Password", ErrorMessage = "Mật khẩu và Xác nhận mật khẩu không khớp")]
         public string ConfirmPassword { get; set; } = "";
 
         public string errorMessage = "";
