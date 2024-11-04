@@ -4,6 +4,10 @@
 }
 <div class="row border rounded-3">
     <div class="col-md-8 p-3">
+<<<<<<< HEAD
+=======
+        <h4>Giỏ hàng</h4>
+>>>>>>> 558222f5d72cdaf97c762057ca6af0cee8e5231d
 
         @if (Model.errorMessage.Length > 0)
         {
@@ -23,6 +27,7 @@
         <table class="table align-middle">
             <thead>
                 <tr>
+<<<<<<< HEAD
                     <th>Giỏ hàng</th>
                     <th>Đơn giá</th>
                     <th>Số lượng</th>
@@ -61,6 +66,28 @@
                     </tr>
                 }
             </tbody>
+=======
+                    <td><img src="/images/books/@item.bookInfo.ImageFileName" width="100" class="rounded" alt="..."></td>
+                    <td>
+                        <h4>@item.bookInfo.Title</h4>
+                        <p>
+                            Tác giả: @item.bookInfo.Authors<br>
+                            Thể loại: @item.bookInfo.Category<br>
+                            Giá: @(item.bookInfo.Price)$
+                        </p>
+                    </td>
+                    <td>
+                        <a href="/Cart?action=sub&id=@(item.bookInfo.Id)" class="btn btn-outline-secondary btn-sm" role="button">-</a>
+                        <span class="border rounded-3 p-2 m-1">@item.numCopies</span>
+                        <a href="/Cart?action=add&id=@(item.bookInfo.Id)" class="btn btn-outline-secondary btn-sm" role="button">+</a>
+                    </td>
+                    <td>@(item.totalPrice)$</td>
+                    <td>
+                        <a href="/Cart?action=delete&id=@(item.bookInfo.Id)"><i class="bi bi-trash text-danger h4"></i></a>
+                    </td>
+                </tr>
+            }
+>>>>>>> 558222f5d72cdaf97c762057ca6af0cee8e5231d
         </table>
 
         <form method="get" asp-page-handler="">
@@ -83,9 +110,15 @@
                 <div class="row">
                     <div class="col">
                         <p>Tiền sách:</p>
+<<<<<<< HEAD
                     </div>
                     <div class="col text-end">
                         <p>@(Model.subtotal)$</p>
+=======
+                    </div>  
+                    <div class="col">
+                        <p class="text-end">@(Model.subtotal)$</p>
+>>>>>>> 558222f5d72cdaf97c762057ca6af0cee8e5231d
                     </div>
                 </div>
 
@@ -109,9 +142,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Phương thức thanh toán</label>
+                        <label class="form-label">Payment Method</label>
                         <select class="form-select" asp-for="PaymentMethod">
-                            <option value="cash">Tiền mặt</option>
+                            <option value="cash">Thanh toán bằng tiền mặt</option>
                             <option value="credit_card">Thẻ Credit</option>
                             <option value="paypal">Paypal</option>
                         </select>
@@ -120,16 +153,34 @@
                     <hr>
 
                     <div class="row">
+<<<<<<< HEAD
                         <div class="col">Tiền sách:</div>
                         <div class="col text-end">@Model.subtotal$</div>
+=======
+                        <div class="col">
+                            <p>Tiền sách:</p>
+                        </div>
+                        <div class="col">
+                            <p class="text-end">@(Model.subtotal)$</p>
+                        </div>
+>>>>>>> 558222f5d72cdaf97c762057ca6af0cee8e5231d
                     </div>
                     <div class="row">
                         <div class="col">Phí ship:</div>
                         <div class="col text-end">@Model.shippingFee$</div>
                     </div>
                     <div class="row">
+<<<<<<< HEAD
                         <div class="col">Tổng tiền:</div>
                         <div class="col text-end">@Model.total$</div>
+=======
+                        <div class="col">
+                            <p>Tổng tiền:</p>
+                        </div>
+                        <div class="col">
+                            <p class="text-end">@(Model.total)$</p>
+                        </div>
+>>>>>>> 558222f5d72cdaf97c762057ca6af0cee8e5231d
                     </div>
 
                     <div class="d-grid">
